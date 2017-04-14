@@ -1,0 +1,31 @@
+{
+    "urls": [
+        "https://news.ycombinator.com/"
+    ],
+    "targets": [
+        {
+            "selector": ".storylink",
+            "type": "text",
+            "tag": "storyTitleText"
+        },
+        {
+            "selector": ".title",
+            "type": "html",
+            "tag": "storyTitleHtml"
+        },
+        {
+            "selector": ".storylink",
+            "type": "text",
+            "tag": "storyTitleWords",
+            "submatch": "([a-zA-Z]+)+"
+        },
+        {
+            "selector": ".storylink",
+            "type": "attr:href",
+            "tag": "storyTitleLinks"
+        }
+    ],
+    "output": {
+        "path": "output/$FILENAME"
+    }
+}
