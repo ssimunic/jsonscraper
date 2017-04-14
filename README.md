@@ -6,9 +6,12 @@ For given JSON config file(s), produces JSON file(s) with results.
 
 ## Instructions
 
-Run `$ jsonscraper configPath.`. Output will be saved in file path that is provided in configuration.
+`$ jsonscraper configPath`
 
-You can also run it with multiple configs at once: `$ jsonscraper configPath1 configPath2 configPath3 ...`
+Output will be saved in file path that is provided in configuration.
+
+You can also run it with multiple configs at once: 
+`$ jsonscraper configPath1 configPath2 configPath3 ...`
 
 ## Config documentation
 Configuration is an object which consists of `urls`, `targets` and `output`.
@@ -64,7 +67,7 @@ Optional is `submatch` which can contain regular expression. `selector` can be o
         "path": "output/$FILENAME"
     }
 }
-```
+```about
 
 Above configuration will produce following data:
 
