@@ -67,7 +67,7 @@ Optional is `submatch` which can contain regular expression. `selector` can be o
         "path": "output/$FILENAME"
     }
 }
-```about
+```
 
 Above configuration will produce following data:
 
