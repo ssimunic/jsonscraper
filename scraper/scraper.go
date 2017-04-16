@@ -5,7 +5,6 @@ import (
 	"log"
 
 	"github.com/PuerkitoBio/goquery"
-	"strings"
 )
 
 // Scraper struct used for scraping activity.
