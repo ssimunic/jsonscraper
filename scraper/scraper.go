@@ -119,9 +119,8 @@ func (s *Scraper) processTarget(doc *goquery.Document, target *target, results r
 			value = sel.Text()
 		// Sets value to attribute of the node, for example attr:href for href value
 		// If attribute value doesn't exist, target is skipped
-		case strings.HasPrefix(target.Type, "attr:"):
-			attrTarget := strings.Split(target.Type, ":")[1]
-			if attrv, exists := sel.Attr(attrTarget); exists {
+		case target.attrv != "":
+			if attrv, exists := sel.Attr(target.attrv); exists {
 				value = attrv
 			} else {
 				return

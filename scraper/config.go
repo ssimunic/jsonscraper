@@ -23,6 +23,7 @@ type target struct {
 	Submatch   string `json:"submatch"`
 	Tag        string `json:"tag"`
 	Type       string `json:"type"`
+	attrv      string
 	submatchRe *regexp.Regexp
 }
 
@@ -55,6 +56,9 @@ func newConfig(filePath string) (*Config, error) {
 		}
 		if !c.isValidTarget(target) {
 			return nil, fmt.Errorf("missing target property")
+		}
+		if strings.HasPrefix(target.Type, "attr:") {
+			target.attrv = strings.Split(target.Type, ":")[1]
 		}
 	}
 
