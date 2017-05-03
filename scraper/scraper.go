@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"log"
 
+	"fmt"
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -144,12 +145,12 @@ func (s *Scraper) processTarget(doc *goquery.Document, target *target, results r
 func (s *Scraper) save() error {
 	data, err := JSONMarshalUnescaped(s.Results)
 	if err != nil {
-		return err
+		return fmt.Errorf("error marshaling to json: %v", err)
 	}
 
 	err = ioutil.WriteFile(s.Config.outputPath(), data, 0644)
 	if err != nil {
-		return err
+		return fmt.Errorf("error writing file: %v", err)
 	}
 
 	return nil
